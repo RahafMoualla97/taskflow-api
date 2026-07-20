@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from app.core.config import settings
 
-DATABASE_URL = "postgresql://taskflow_user:taskflow123@localhost:5432/taskflow_db"
-
+DATABASE_URL = settings.database_url
 engine = create_engine(
     DATABASE_URL,
     pool_pre_ping=True,
